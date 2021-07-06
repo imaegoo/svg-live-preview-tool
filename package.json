@@ -1,6 +1,17 @@
 {
   "name": "svg-live-preview-tool",
   "version": "0.1.0",
+  "description": "无后端 SVG 在线预览工具",
+  "author": "imaegoo <hello@imaegoo.com> (https://github.com/imaegoo)",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imaegoo/svg-live-preview-tool.git"
+  },
+  "homepage": "https://github.com/imaegoo/svg-live-preview-tool",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
