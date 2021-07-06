@@ -1,6 +1,6 @@
 {
   "name": "svg-live-preview-tool",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "无后端 SVG 在线预览工具",
   "author": "imaegoo <hello@imaegoo.com> (https://github.com/imaegoo)",
   "license": "MIT",
@@ -20,6 +20,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.4.5",
+    "file-saver": "^2.0.5",
     "vue": "^2.6.11"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>SVG 在线预览工具</h1>
-    <p>无后端 SVG 在线预览工具，只需拖入 SVG 文件，轻松预览！</p>
+    <p>烦恼于 Windows 难以预览图标？无后端 SVG 在线预览工具，只需批量拖入 SVG 文件，轻松预览！点击相应图标即可下载！</p>
     <el-upload
         class="upload"
         ref="upload"
@@ -12,11 +12,11 @@
         :show-file-list="false"
         :http-request="uploadFile">
       <i class="el-icon-upload"></i>
-      <div class="el-upload__text">将 SVG 文件拖到此处，或<em>点击上传</em></div>
+      <div class="el-upload__text">全选 SVG 文件拖到此处，或<em>点击选择文件</em></div>
     </el-upload>
     <div class="svg-list">
       <div class="svg-item" v-for="svg in svgs" :key="svg.title">
-        <div class="svg-inline" v-html="svg.data"></div>
+        <div class="svg-inline" @click="download(svg)" v-html="svg.data"></div>
         <el-input class="svg-title" v-model="svg.title" readonly></el-input>
       </div>
     </div>
@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import FileSaver from 'file-saver'
+
 export default {
   name: 'app',
   data () {
@@ -57,6 +59,16 @@ export default {
           }
         }
       })
+    },
+    download (svg) {
+      FileSaver.saveAs(
+        new Blob(
+          [svg.data],
+          { type: 'application/svg+xml' }
+        ),
+        svg.title
+      )
+
     }
   }
 }
@@ -96,6 +108,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 #app .svg-title input {
   border: none;
