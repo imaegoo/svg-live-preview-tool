@@ -1,4 +1,8 @@
-# svg-live-preview-tool
+# SVG 在线预览工具
+
+无后端的 SVG 在线预览工具，只需拖入 SVG 文件，轻松预览！
+
+![预览图](./preview.png)
 
 ## Project setup
 ```
@@ -19,6 +23,3 @@ yarn build
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
